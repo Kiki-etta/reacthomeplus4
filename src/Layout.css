@@ -1,0 +1,94 @@
+.Weather {
+  font-family: "Amatic SC", cursive;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 60px;
+  background-image: linear-gradient(
+    to top,
+    #0c3483 0%,
+    #a2b6df 100%,
+    #6b8cce 100%,
+    #a2b6df 100%
+  );
+  border-radius: 40px;
+  border: #0c3483 solid;
+}
+
+h2 {
+  color: #0c3483;
+  font-size: 30px;
+  text-align: center;
+}
+h3 {
+  font-size: 50px;
+  color: #0c3483;
+  text-decoration: underline;
+  text-align: center;
+}
+#current-location-button {
+  border-radius: 10px;
+}
+
+h4 {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+h5 {
+  color: #a2b6df;
+  font-size: 23px;
+  text-align: center;
+}
+#location {
+  font-size: 50px;
+  color: #0c3483;
+  text-decoration: underline;
+  text-align: center;
+}
+
+#icon {
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  width: 50px;
+}
+#current-day {
+  font-size: 30px;
+  border: #a2b6df solid;
+  border-radius: 20px;
+  text-align: center;
+  color: #0c3483;
+}
+
+#coming-days {
+  font-size: 20px;
+  text-align: center;
+  border: #a2b6df solid;
+  border-radius: 20px;
+  color: #a2b6df;
+}
+
+.fa-wind,
+.fa-tint,
+.fa-cloud-sun {
+  color: white;
+  font-size: 27px;
+}
+
+#link-text {
+  color: #193d8a;
+  text-align: center;
+  font-size: 10px;
+}
+
+#link {
+  color: purple;
+}
+
+img {
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  border: #a2b6df solid;
+  border-radius: 20px;
+}
