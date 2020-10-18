@@ -36,7 +36,7 @@ export default function Search() {
         <li> Temperature : {temperature} C°</li>
         <li>Description : {description}</li>
         <li>Humidity : {humidity}%</li>
-        <li>Wind : {wind}</li>
+        <li>Wind : {wind}km/ph</li>
         <li>{icon}</li>
       </ul>
     );

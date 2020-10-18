@@ -1,7 +1,10 @@
 .App {
-  font-family: sans-serif;
+  font-family: "Amatic SC";
+  text-align: start;
 }
 .Weather-Details {
   text-transform: capitalize;
   list-style: none;
+  color: white;
+  font-size: 40px;
 }
