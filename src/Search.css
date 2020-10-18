@@ -1,0 +1,7 @@
+.App {
+  font-family: sans-serif;
+}
+.Weather-Details {
+  text-transform: capitalize;
+  list-style: none;
+}

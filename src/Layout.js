@@ -1,23 +1,26 @@
 import React from "react";
 import "./Layout.css";
-import './illustration.png';
+import Search from './Search';
+import Date from './Date';
 
 export default function Layout() {
-  let weatherData = {
+   let weatherData = {
     city: "Amsterdam",
     date: "Today",
-    img: "./illustration.png",
     temperature: 19,
     humidity: 57,
     wind: 15
   };
 
   return (
-    <div className="Weather">
+      <div class="container">
+         <div className="Weather">
+             <h2>
+          <Date />
+      </h2>
       <h3>{weatherData.city}</h3>
+        <Search/>
 
-      <img className="main-img" src={weatherData.img} alt="main img" />
-      <h2>{weatherData.date}</h2>
 
       <className className="row" id="current-day">
         <div className="col-4">
@@ -44,25 +47,13 @@ export default function Layout() {
 
       <br />
 
-      <h4 className="search">
-        <form>
-          <input
-            id="city-input"
-            type="search"
-            placeholder="Enter city"
-            autofocus="on"
-            autoComplete="off"
-          />
-
-          <input type="submit" value="Go" />
-
           <button className="current-location-button">Current Location</button>
-        </form>
-      </h4>
-
       <h5>Weather for the coming hours</h5>
 
       <div className="row"></div>
     </div>
-  );
+     </div>
+  ); 
+     
+    
 }
