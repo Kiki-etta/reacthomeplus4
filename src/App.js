@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './Layout';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <header > 
@@ -12,4 +12,3 @@ function App() {
   );
 }
 
-export default App;
