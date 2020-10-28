@@ -48,12 +48,6 @@ h5 {
   text-align: center;
 }
 
-#icon {
-  display: block;
-  margin: 0 auto;
-  border-radius: 20px;
-  width: 50px;
-}
 #current-day {
   font-size: 30px;
   border: #a2b6df solid;
@@ -70,19 +64,14 @@ h5 {
   color: #a2b6df;
 }
 
-.fa-wind,
-.fa-tint,
-.fa-cloud-sun {
+i {
   color: white;
   font-size: 27px;
 }
 
-#link-text {
+.Layout footer {
+  font-family: "Courier New", Courier, monospace;
   color: #193d8a;
   text-align: center;
-  font-size: 20px;
-}
-
-#link {
-  color: purple;
+  font-size: 10px;
 }

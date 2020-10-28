@@ -3,6 +3,7 @@ import axios from "axios";
 import './Search.css';
 
 
+
 export default function Search() {
   let [city, setCity] = useState("");
   let [details, setDetails] = useState("");
