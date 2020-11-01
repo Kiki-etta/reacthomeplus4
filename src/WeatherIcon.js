@@ -1,9 +1,7 @@
 import React from "react";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {  faBolt, faCloud, faCloudMeatball, faCloudMoon, faCloudRain, faCloudShowersHeavy, faCloudSunRain, faMoon,  faSmog, faSnowflake, faSun, faTemperatureHigh, faTint, faWind } from '@fortawesome/free-solid-svg-icons'
+import {  faBolt, faCloud, faCloudMeatball, faCloudMoon, faCloudRain, faCloudShowersHeavy, faCloudSunRain, faMoon,  faSmog, faSnowflake, faSun} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
    
-library.add( faTint, faWind, faTemperatureHigh)
 
 export default function WeatherIcon (props){
     const mapping = {

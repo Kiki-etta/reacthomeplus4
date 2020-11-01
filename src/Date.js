@@ -40,5 +40,5 @@ export default function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${day} ${hours}:${minutes} ${currentDate} ${month} , ${year} `;
+  return `${day}, ${currentDate} ${month}, ${hours}:${minutes}, ${year} `;
 }

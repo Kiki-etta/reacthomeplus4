@@ -59,7 +59,8 @@ function updateCity(event) {
 
   if (weatherData.ready){
       return (
-      <div class="container">
+        <div className = "Wrapper">
+          <div className="container">
          <div className="Weather">  
           <RealtimeInfo info ={weatherData}/>
           <br/>
@@ -93,13 +94,15 @@ function updateCity(event) {
           <Forecast city = {weatherData.city}/>
         </div>
     </div>
-    <p className="link-text">
-    Open source code
+    <p>
+    Open source code 
     <a className="link" href="https://github.com/Kiki-etta/reacthomeplus4"
-      >by Kiki-etta
+      >  Kiki-etta
     </a>
   </p>
      </div>
+        </div>
+      
   ); 
 
   }else {

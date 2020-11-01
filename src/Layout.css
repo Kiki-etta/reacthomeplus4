@@ -1,7 +1,11 @@
+.Wrapper {
+  background-color: #a0b5dd;
+}
+
 .Weather {
   font-family: "Amatic SC";
   max-width: 400px;
-  margin: 20px auto;
+  margin: 0px auto;
   padding: 30px;
   background-image: linear-gradient(
     to top,
@@ -32,6 +36,9 @@ h4 button {
   color: #0c3483;
 }
 
+h3 {
+  text-decoration: underline;
+}
 h3,
 h2 {
   color: #a2b6df;
@@ -55,5 +62,10 @@ h2 {
 p {
   color: #193d8a;
   text-align: center;
-  font-size: 10px;
+  font-size: 11px;
+}
+
+p a {
+  text-decoration: none;
+  color: purple;
 }

@@ -6,9 +6,9 @@ import Layout from './Layout';
 export default function App(props) {
   return (
     <div className="App">
-      <header > 
+      <div > 
    <Layout defaultCity ="Amsterdam"/>
-      </header>
+      </div>
     </div>
   ); 
 }
