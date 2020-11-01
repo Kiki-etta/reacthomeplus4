@@ -20,7 +20,9 @@ export default function Layout(props) {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       city: response.data.name,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      lat: response.data.coord.lat,
+      long: response.data.coord.lon,
     })
     ;
   }
@@ -33,11 +35,21 @@ export default function Layout(props) {
 
   }
 
+  function searchCurrentCoordinates(position) {
+    const apiKey = "ad04b7a362cea2ed31488d67c6adbf93";
+    let updatedApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(updatedApiUrl).then(handleResponse);
+  }
+
 function handleSubmit(event){
   event.preventDefault();
   search(city);
   
 }
+  function CurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchCurrentCoordinates);
+  }
 
 
 function updateCity(event) {
@@ -48,13 +60,15 @@ function updateCity(event) {
   if (weatherData.ready){
       return (
       <div class="container">
-         <div className="Weather">
-            
-<RealtimeInfo info ={weatherData}/>
-          <h2>
-          <Date />
+         <div className="Weather">  
+          <RealtimeInfo info ={weatherData}/>
+          <br/>
+          
+            <h2>
+              <Date />
             </h2>
-        <h4 className="search">
+
+         <h4 className="search">
           <form onSubmit={handleSubmit}>
             <input
               type="search"
@@ -62,24 +76,23 @@ function updateCity(event) {
               autoComplete="off"
                onChange={updateCity}/>
             <input type="submit" value="Go" />
-            <button >Current Location</button>
-          </form>
-           
+
+            <button
+                type="button"
+                onClick={CurrentLocation}
+                className="searchCurrentLocation"
+              >
+                Current Location
+              </button>
+            
+          </form>         
         </h4>
-        
-       
-
+        <br/>
       <h3>Weather for the coming hours</h3>
-
         <div  id="coming-days">
-          
           <Forecast city = {weatherData.city}/>
-
         </div>
     </div>
-
-
-
     <p className="link-text">
     Open source code
     <a className="link" href="https://github.com/Kiki-etta/reacthomeplus4"

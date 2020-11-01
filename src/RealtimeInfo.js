@@ -11,35 +11,34 @@ library.add( faTint, faWind, faTemperatureHigh)
 export default function RealtimeInfo(props){
 
     return ( <div className = "RealtimeInfo">
-       <div className = "mainIcon">
+       <div>
          </div>
-       <h1>{props.info.city}
-      <img src ={props.info.iconUrl}
-      alt = {props.info.description}
-      />
-       </h1>
+         <h1>
+             <img src ={props.info.iconUrl}
+                  alt = {props.info.description}
+            />
+        {props.info.city}
+        </h1>
+
        <div className="row" id="current-day">
         <div className="col-4">
           <div> {Math.round(props.info.temperature)}ºC</div>
-           <FontAwesomeIcon icon={faTemperatureHigh}></FontAwesomeIcon>
+           <FontAwesomeIcon icon={faTemperatureHigh}/>
           temperature
         </div>
         <div className="col-4">
           <span> {Math.round(props.info.humidity)}%</span> <br />
-          <FontAwesomeIcon icon={faTint}></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faTint}/>
           <br />
           humidity
         </div>
         <div className="col-4">
           <span>{Math.round(props.info.wind)}km/h</span>
           <br />
-          <FontAwesomeIcon icon={faWind}></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faWind}/>
           <br />
           wind speed
         </div>
       </div>
-      <br>
-      </br>
-
     </div> );  
 }
