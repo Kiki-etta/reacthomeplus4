@@ -13,14 +13,11 @@ export default function RealtimeInfo(props){
     return ( <div className = "RealtimeInfo">
        <div className = "mainIcon">
          </div>
-       <h3>{props.info.city}
+       <h1>{props.info.city}
       <img src ={props.info.iconUrl}
       alt = {props.info.description}
       />
-       </h3>
-
-        
-
+       </h1>
        <div className="row" id="current-day">
         <div className="col-4">
           <div> {Math.round(props.info.temperature)}ºC</div>

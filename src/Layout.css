@@ -1,8 +1,8 @@
 .Weather {
   font-family: "Amatic SC";
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 30px 60px;
+  padding: 30px;
   background-image: linear-gradient(
     to top,
     #0c3483 0%,
@@ -16,11 +16,6 @@
 
 h1 {
   color: #0c3483;
-  font-size: 40px;
-  text-align: center;
-}
-h3 {
-  color: #0c3483;
   text-decoration: underline;
   text-align: center;
 }
@@ -30,9 +25,17 @@ h4 {
   margin: 0 auto;
   text-align: center;
 }
-h5 {
+
+h4 button {
+  margin-left: 8px;
+  border-radius: 10px;
+}
+
+h3,
+h2 {
   color: #a2b6df;
   text-align: center;
+  text-decoration: underline;
 }
 
 #current-day {
@@ -51,8 +54,7 @@ h5 {
   color: #a2b6df;
 }
 
-.Layout footer {
-  font-family: "Courier New", Courier, monospace;
+p {
   color: #193d8a;
   text-align: center;
   font-size: 10px;

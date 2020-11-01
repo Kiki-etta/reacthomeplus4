@@ -21,8 +21,6 @@ export default function Layout(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-       
-
     })
     ;
   }
@@ -51,16 +49,12 @@ function updateCity(event) {
       return (
       <div class="container">
          <div className="Weather">
-             <h1>
-          <Date />
-            </h1>
-
-
-
+            
 <RealtimeInfo info ={weatherData}/>
-
-
-        <h4 class="search">
+          <h2>
+          <Date />
+            </h2>
+        <h4 className="search">
           <form onSubmit={handleSubmit}>
             <input
               type="search"
@@ -68,14 +62,14 @@ function updateCity(event) {
               autoComplete="off"
                onChange={updateCity}/>
             <input type="submit" value="Go" />
+            <button >Current Location</button>
           </form>
-
-          
-           <button >Current Location</button>
+           
         </h4>
+        
+       
 
-
-      <h5>Weather for the coming hours</h5>
+      <h3>Weather for the coming hours</h3>
 
         <div  id="coming-days">
           
@@ -86,14 +80,12 @@ function updateCity(event) {
 
 
 
-    <footer >
+    <p className="link-text">
     Open source code
-    <a href="https://github.com/Kiki-etta/reacthomeplus4"
-      target = "blank" >
-          by Kiki-etta
-      
+    <a className="link" href="https://github.com/Kiki-etta/reacthomeplus4"
+      >by Kiki-etta
     </a>
-  </footer>
+  </p>
      </div>
   ); 
 
