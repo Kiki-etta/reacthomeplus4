@@ -7,6 +7,7 @@ import RealtimeInfo from "./RealtimeInfo";
 import Forecast from "./Forecast";
 
 
+
 export default function Layout(props) {
   
   const[weatherData, setWeatherData] = useState({ready:false});
@@ -19,10 +20,8 @@ export default function Layout(props) {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       city: response.data.name,
-      iconUrl: (<img
-        src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
-        alt="weather" 
-      />)
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+       
 
     })
     ;
@@ -70,6 +69,8 @@ function updateCity(event) {
                onChange={updateCity}/>
             <input type="submit" value="Go" />
           </form>
+
+          
            <button >Current Location</button>
         </h4>
 
