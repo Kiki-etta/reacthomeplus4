@@ -1,93 +1,103 @@
 import React, { useState } from "react";
 import "./Layout.css";
-import Search from './Search';
 import Date from './Date';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
+import RealtimeInfo from "./RealtimeInfo";
+import Forecast from "./Forecast";
 
 
-
-
-export default function Layout() {
+export default function Layout(props) {
   
   const[weatherData, setWeatherData] = useState({ready:false});
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response){
-    console.log(response.data);
+   
     setWeatherData({
       ready:true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       city: response.data.name,
-      icon : (
-      <img
+      iconUrl: (<img
         src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
-        alt="weather"
-      />
-    ),
-    });
-      
-    
+        alt="weather" 
+      />)
+
+    })
+    ;
   }
 
+  function search (){
+    const apiKey = `484f3d6f06753ea5697d7e6e574f9419`;
+    let units = `units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&${units}`;  
+  axios.get(apiUrl).then(handleResponse);
+
+  }
+
+function handleSubmit(event){
+  event.preventDefault();
+  search(city);
+  
+}
+
+
+function updateCity(event) {
+    setCity(event.target.value);
+
+}
+
   if (weatherData.ready){
-return (
+      return (
       <div class="container">
          <div className="Weather">
-             <h2>
+             <h1>
           <Date />
-      </h2>
-      <h3>{weatherData.city}</h3>
-       
-       <div className="row" id="current-day">
-        <div className="col-4">
-          <div> {Math.round(weatherData.temperature)}ºC</div>
-          <i>
-            {weatherData.icon}
-          </i>
-          temperature
-        </div>
-        <div className="col-4">
-          <span> {Math.round(weatherData.humidity)}%</span> <br />
-          <i FontAwesomeIcon icon={["fas fa-tint"]}></i>
-          <br />
-          humidity
-        </div>
-        <div className="col-4">
-          <span>{Math.round(weatherData.wind)}km/h</span>
-          <br />
-          <i className="fas fa-wind"></i>
-          <br />
-          wind speed
-        </div>
-      </div>
-      <br>
-      </br>
+            </h1>
 
- <Search/>
+
+
+<RealtimeInfo info ={weatherData}/>
+
+
+        <h4 class="search">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              placeholder="Enter city"
+              autoComplete="off"
+               onChange={updateCity}/>
+            <input type="submit" value="Go" />
+          </form>
+           <button >Current Location</button>
+        </h4>
 
 
       <h5>Weather for the coming hours</h5>
-        <div class="row" id="coming-days"></div>
+
+        <div  id="coming-days">
+          
+          <Forecast city = {weatherData.city}/>
+
+        </div>
     </div>
+
+
+
     <footer >
     Open source code
-    <div href="https://github.com/Kiki-etta/reacthomeplus4"
-      target = "_blank" >
+    <a href="https://github.com/Kiki-etta/reacthomeplus4"
+      target = "blank" >
           by Kiki-etta
       
-    </div>
+    </a>
   </footer>
      </div>
   ); 
 
   }else {
-     const apiKey = `484f3d6f06753ea5697d7e6e574f9419`;
-    let units = `units=metric`;
-    let  city =  "Amsterdam";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&${units}`;  
-  axios.get(apiUrl).then(handleResponse);
-
+    search();
 return "Loading...";
   }
 
